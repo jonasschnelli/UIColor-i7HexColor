@@ -1,0 +1,42 @@
+This UIColor Categorie (Extend) will allow you to create UIColor instances with a "Color-Hex-NSString".
+Example:
+---
+label.textColor = [UIColor colorWithHexString:@"ff0000"]; // red color
+//or
+label.textColor = [UIColor colorWithHexString:@"f00"]; // red color
+//or
+label.textColor = [UIColor colorWithHexString:@"ff000055"]; // red color with some alpha 
+---
+
+Version
+=======
+0.1
+
+License
+=======
+BSD
+
+Changelog
+==========
+07/01/2010 – Version 0.1 - package started
+
+Author
+======
+Jonas Schnelli / include7 AG - www.include7.ch
+
+
+		     	_            __          __  _____
+			   (_)___  _____/ /_  ______/ /_/__  /
+			  / / __ \/ ___/ / / / / __  / _ \/ /
+			 / / / / / /__/ / /_/ / /_/ /  __/ /
+			/_/_/ /_/\___/_/\__,_/\__,_/\___/_/........
+
+		
+
+URL
+===
+http://github.com/jonasschnelli/UIColor-i7HexColor
+
+Info
+====
+Have fun while using and extending this package.
