@@ -1,0 +1,3 @@
+08/13/2010 - Jonas Schnelli
++ fixed huge problem when hex color string starts with "0".
+

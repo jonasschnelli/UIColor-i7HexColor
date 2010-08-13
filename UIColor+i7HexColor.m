@@ -14,7 +14,7 @@
 + (UIColor *)colorWithHexString:(NSString *)hexString {
 	
 	/* convert the string into a int */
-	unsigned int colorValue;
+	unsigned int colorValueR,colorValueG,colorValueB,colorValueA;
 	NSString *hexStringCleared = [hexString stringByReplacingOccurrencesOfString:@"#" withString:@""];
 	if(hexStringCleared.length == 3) {
 		/* short color form */
@@ -26,14 +26,25 @@
 	if(hexStringCleared.length == 6) {
 		hexStringCleared = [hexStringCleared stringByAppendingString:@"ff"];
 	}
-	[[NSScanner scannerWithString:hexStringCleared] scanHexInt:&colorValue];
 	
-	/* now build the UIColor with standard allocators */
-	return [UIColor colorWithRed:((colorValue)&0xFF)/255.0 
-					green:((colorValue>>8)&0xFF)/255.0 
-					 blue:((colorValue>>16)&0xFF)/255.0 
-					alpha:((colorValue>>24)&0xFF)/255.0];
+	/* im in hurry ;) */
+	NSString *red = [hexStringCleared substringWithRange:NSMakeRange(0, 2)];
+	NSString *green = [hexStringCleared substringWithRange:NSMakeRange(2, 2)];
+	NSString *blue = [hexStringCleared substringWithRange:NSMakeRange(4, 2)];
+	NSString *alpha = [hexStringCleared substringWithRange:NSMakeRange(6, 2)];
 	
+	[[NSScanner scannerWithString:red] scanHexInt:&colorValueR];
+	[[NSScanner scannerWithString:green] scanHexInt:&colorValueG];
+	[[NSScanner scannerWithString:blue] scanHexInt:&colorValueB];
+	[[NSScanner scannerWithString:alpha] scanHexInt:&colorValueA];
+	
+
+	return [UIColor colorWithRed:((colorValueR)&0xFF)/255.0 
+					green:((colorValueG)&0xFF)/255.0 
+					 blue:((colorValueB)&0xFF)/255.0 
+					alpha:((colorValueA)&0xFF)/255.0];
+	
+
 }
 
 @end
