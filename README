@@ -10,7 +10,7 @@ label.textColor = [UIColor colorWithHexString:@"ff000055"]; // red color with so
 
 Version
 =======
-0.1
+0.11
 
 License
 =======
@@ -19,6 +19,7 @@ BSD
 Changelog
 ==========
 07/01/2010 – Version 0.1 - package started
+08/13/2010 – Version 0.11 - + fixed huge problem when hex color string starts with "0".
 
 Author
 ======
